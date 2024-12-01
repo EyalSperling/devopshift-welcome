@@ -31,7 +31,7 @@ pipeline {
                 }
             }
         }
-        stages('run in paralel'){
+        stage('run in paralel'){
         parallel{ 
                 stage('Install Dependencies') {
             steps {
@@ -50,7 +50,7 @@ pipeline {
                 }
             }
         }
-        }
+        
         
 
         stage('Hello World!') {
@@ -63,6 +63,7 @@ pipeline {
                     }
                 }
             }
+        }
         }
         }
 
