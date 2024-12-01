@@ -31,8 +31,9 @@ pipeline {
                 }
             }
         }
-
-        stage('Install Dependencies') {
+        stage('run in paralel'){
+        parallel{ 
+                stage('Install Dependencies') {
             steps {
                 dir("${PROJECT_HOME}") {
                     script {
@@ -44,6 +45,20 @@ pipeline {
 
                         # Install required Python packages
                         pip install -r requirements.txt
+                        '''
+                    }
+                }
+            }
+        }
+        }
+        }
+
+        stage('Hello World!') {
+            steps {
+                dir("${PROJECT_HOME}") {
+                    script {
+                        '''
+                        echo "Hello World ! " && sleep 10 
                         '''
                     }
                 }
