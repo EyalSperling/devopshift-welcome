@@ -31,7 +31,7 @@ pipeline {
                 }
             }
         }
-        stage('run in paralel'){
+        stages('run in paralel'){
         parallel{ 
                 stage('Install Dependencies') {
             steps {
