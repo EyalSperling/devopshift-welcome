@@ -51,7 +51,7 @@ pipeline {
             }
         }
         }
-        }
+        
 
         stage('Hello World!') {
             steps {
@@ -63,6 +63,7 @@ pipeline {
                     }
                 }
             }
+        }
         }
 
         stage('Run Flask Application') {
